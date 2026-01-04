@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- 打开 YouTube 按钮 -->
+    <Button
+        android:id="@+id/openYouTubeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开YouTube"
+        android:padding="10dp"
+        android:background="@drawable/button_focus_state"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <!-- 打开其他应用按钮 -->
+    <Button
+        android:id="@+id/openOtherAppButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开YouTube(videoId)"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_focus_state"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+</LinearLayout>
