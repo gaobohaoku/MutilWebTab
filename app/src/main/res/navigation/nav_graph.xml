@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.deeplink.demo.HomeFragment"
+        android:label="Browser Home" >
+        <!-- 添加跳转到管理页的 Action -->
+        <action
+            android:id="@+id/action_home_to_manager"
+            app:destination="@id/tabManagerFragment" />
+    </fragment>
+
+    <!-- 新增的管理页面 -->
+    <fragment
+        android:id="@+id/tabManagerFragment"
+        android:name="com.deeplink.demo.TabManagerFragment"
+        android:label="Tab Manager" />
+</navigation>

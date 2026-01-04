@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="180dp"
+    android:layout_marginEnd="24dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- 1. 卡片主体 (也是选中点击区域) -->
+    <!-- 注意：宽高设为 match_parent 并留出 margin 给放大动画空间 -->
+    <TextView
+        android:id="@+id/tv_tab_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_focus_state"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:text="Page Title"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. 删除按钮 (放置在卡片下方或右上角，这里演示放在下方居中，方便遥控器向下操作) -->
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_focus_state"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:src="@android:drawable/ic_menu_delete"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_tab_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_tab_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tab_name"
+        app:layout_constraintVertical_bias="0.5" />
+    <!-- bias 0.5 意味着按钮中心对齐在 TextView 的底边 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

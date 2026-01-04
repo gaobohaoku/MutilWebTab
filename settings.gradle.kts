@@ -1,4 +1,4 @@
 
-rootProject.name = "DeepLinkDemo"
+rootProject.name = "MutilWebTab"
 include(":app")
  

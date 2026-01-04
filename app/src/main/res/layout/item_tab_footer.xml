@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="180dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- 只需要稍微比 Item 小一点的高度，或者保持一致 -->
+    <Button
+        android:id="@+id/btn_add_new"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="top"
+        android:text="+ 新建"
+        android:textSize="24sp"
+        android:background="@drawable/button_focus_state"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColor="#FFFFFF" />
+</FrameLayout>

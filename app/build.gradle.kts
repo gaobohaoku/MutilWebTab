@@ -1,16 +1,14 @@
 plugins {
     id("com.android.application")
-    id("kotlin-parcelize")
     kotlin("android")
-    kotlin("kapt")
 }
 
 android {
-    namespace = "com.deeplink.demo"
+    namespace = "com.multi.webtab.demo"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.deeplink.demo"
+        applicationId = "com.multi.webtab.demo"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -52,10 +50,11 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.core:core-ktx:1.16.0")
-
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("com.github.bumptech.glide:glide:4.13.0") // 图片加载
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    // Navigation 组件
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("androidx.leanback:leanback:1.0.0") // 用于 TV 焦点优化
 }

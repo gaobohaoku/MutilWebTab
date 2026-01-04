@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="#222222"> <!-- TV通常用深色背景 -->
+
+    <!-- 顶部 Tab 栏区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:clipChildren="false">
+
+        <!-- 管理按钮 (新增) -->
+        <Button
+            android:id="@+id/btn_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="管理"
+            android:layout_marginEnd="16dp"
+            android:focusable="true"
+            android:background="@drawable/button_focus_state"
+            android:textColor="#FFFFFF" />
+
+        <!-- 新建按钮 -->
+        <Button
+            android:id="@+id/btn_add_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ 新建"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/button_focus_state"
+            android:textColor="#FFFFFF" />
+
+        <!-- Tab 列表容器 (支持横向滚动) -->
+        <HorizontalScrollView
+            android:id="@+id/hsv_tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clipChildren="false"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/ll_tab_strip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clipChildren="false" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- 内容区域使用 FrameLayout 叠加 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#333333">
+
+        <!-- 原生 Home 面板 -->
+        <LinearLayout
+            android:id="@+id/layout_native_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Browser Home"
+                android:textColor="#FFFFFF"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击下方按钮开始新的浏览"
+                android:textColor="#AAAAAA"
+                android:layout_marginTop="16dp"/>
+
+            <!-- 【新增】创建新 Tab 的按钮 -->
+            <Button
+                android:id="@+id/btn_create_tab_from_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="开始访问 / 新建标签页"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="16dp"
+                android:textSize="20sp"
+                android:background="@drawable/button_focus_state"
+                android:textColor="#FFFFFF"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+        </LinearLayout>
+
+        <!-- 2. Web Fragment 容器 -->
+        <!-- 当 currentId != ID_HOME 时显示 -->
+        <FrameLayout
+            android:id="@+id/child_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" /> <!-- 默认隐藏 -->
+
+    </FrameLayout>
+
+</LinearLayout>
